@@ -3,8 +3,7 @@
 Open specifications for measuring and improving website visibility in traditional search engines, answer engines, and AI-generated responses.
 
 [![Licence: CC-BY 4.0](https://img.shields.io/badge/Licence-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Validator: MIT](https://img.shields.io/badge/Validator-MIT-blue.svg)](./LICENSE-MIT.txt)
-
+![Schema](https://img.shields.io/badge/Schema-MIT-blue)
 ---
 
 ## What this is
