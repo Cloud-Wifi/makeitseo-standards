@@ -1,0 +1,100 @@
+# Licensing notice
+
+The MakeitSEO Standards Programme uses a dual-licence model. The licence that applies to any given file in this repository is determined by what kind of file it is, as set out below.
+
+---
+
+## Specifications and ancillary documentation — CC-BY 4.0
+
+The following are licensed under the **Creative Commons Attribution 4.0 International Public Licence** (CC-BY 4.0):
+
+- All `.md` files within `makeitseo-standard/` and `agent-runtime-compatibility/` (and their subdirectories)
+- All schema, type, and protocol exports: `.json` schema files, `.yaml` OpenAPI files, `.d.ts` TypeScript definitions, Pydantic model exports, Postman collection exports
+- All repository-level governance documents: `README.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `SECURITY.md`, and this `LICENSE` notice
+
+You are free to:
+
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material
+- **Use commercially** — including building products that compete directly with MakeitSEO
+
+Under the following terms:
+
+- **Attribution** — You must give appropriate credit, provide a link to the licence, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests Cloud WiFi Limited endorses you or your use.
+- **No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the licence permits.
+
+The full legal text of CC-BY 4.0 is reproduced in [`LICENSE-CC-BY-4.0.txt`](./LICENSE-CC-BY-4.0.txt) in this repository. The canonical version is available at <https://creativecommons.org/licenses/by/4.0/legalcode>.
+
+### Attribution format
+
+The recommended attribution string is:
+
+> Based on the MakeitSEO Standards Programme by Cloud WiFi Limited, licensed under CC-BY 4.0. https://github.com/Cloud-Wifi/makeitseo-standards
+
+Citation in academic, technical, or commercial documentation may follow the format appropriate to that context, provided the source, editor, licence, and canonical URL are identifiable.
+
+---
+
+## Code, tooling, and test fixtures — MIT
+
+The following are licensed under the **MIT Licence**:
+
+- Reference validator implementations
+- Test fixture files inside any `validator-tests/` directory
+- Build scripts, deterministic generators, and any other executable code committed to this repository
+- The `@makeitseo/standard` npm package (published separately, mirrored from this repository)
+
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the software, subject only to the standard MIT notice and disclaimer. The full text is reproduced in [`LICENSE-MIT.txt`](./LICENSE-MIT.txt).
+
+```
+MIT Licence
+
+Copyright (c) 2026 Cloud WiFi Limited
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## Why two licences
+
+CC-BY 4.0 is the appropriate licence for normative documents: it preserves authorship attribution while permitting unrestricted adoption, including by commercial competitors. It is the de facto licence for open specifications across the web (used by Schema.org, the W3C for many deliverables, and most modern RFC-style publications).
+
+MIT is the appropriate licence for code: it permits embedding in proprietary products with minimal compliance overhead, which is the standard expectation for validator libraries and reference tooling.
+
+The two licences are fully compatible. A downstream product implementing the MakeitSEO Standard typically incorporates CC-BY 4.0 specification material (cited with attribution) and MIT-licensed validator code (with notice). No file in this repository uses a copyleft licence; nothing here will require derivative works to adopt any particular licence of their own.
+
+---
+
+## Trademarks
+
+The names "MakeitSEO", "MakeitSEO Standard", "Agent Runtime Compatibility", and "ARC" (in the context of agent runtime compatibility) are unregistered trademarks of Cloud WiFi Limited. The CC-BY 4.0 licence does not grant trademark rights.
+
+You may refer to the specifications by name when describing your implementation, comparing products, or citing the work. You may not use the names in a way that suggests endorsement by Cloud WiFi Limited, or implies that your product is the official specification, the canonical reference implementation, or otherwise authoritative.
+
+If you describe your product as conformant, the conformance bar is defined inside each specification document. Passing that bar entitles you to a listing in the implementations directory of the relevant specification, which is the official record of conformant implementations.
+
+---
+
+## Contact
+
+Licensing questions, attribution clarifications, and trademark concerns should be raised by opening an issue in this repository, or by emailing the editor directly. See `README.md` for current contact details.
+
+Cloud WiFi Limited
+Company No. 13521157 (England & Wales)

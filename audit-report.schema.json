@@ -1,0 +1,1254 @@
+{
+  "$id": "https://standard.makeitseo.io/v0.1/audit-report.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "level": {
+            "enum": [
+              "standard",
+              "full"
+            ]
+          }
+        },
+        "required": [
+          "level"
+        ]
+      },
+      "then": {
+        "properties": {
+          "checks": {
+            "required": [
+              "aeo.article_schema",
+              "aeo.direct_answer_opening",
+              "aeo.faq_schema",
+              "aeo.heading_hierarchy",
+              "aeo.organization_schema",
+              "geo.about_page_depth",
+              "geo.directory_presence",
+              "geo.entity_consistency",
+              "geo.llms_txt_present",
+              "geo.sameas_authority",
+              "seo.canonical_url",
+              "seo.https",
+              "seo.meta_description",
+              "seo.mobile_viewport",
+              "seo.robots_indexability",
+              "seo.sitemap_present",
+              "seo.title_tag"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "level": {
+            "const": "full"
+          }
+        },
+        "required": [
+          "level"
+        ]
+      },
+      "then": {
+        "properties": {
+          "checks": {
+            "properties": {
+              "aeo.article_schema": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "schema_found",
+                      "required_properties_present"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "aeo.direct_answer_opening": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "first_paragraph_text",
+                      "word_count",
+                      "contains_definition"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "aeo.faq_schema": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "schema_found",
+                      "question_count"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "aeo.heading_hierarchy": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "h1_count",
+                      "skipped_levels",
+                      "heading_outline"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "aeo.organization_schema": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "schema_found",
+                      "has_name",
+                      "has_url"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "geo.about_page_depth": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "about_page_url",
+                      "word_count",
+                      "entity_markers"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "geo.directory_presence": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "directory_sources_checked",
+                      "listings_found",
+                      "sources_timestamp"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "geo.entity_consistency": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "canonical_entity_name",
+                      "name_variants",
+                      "address_variants"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "geo.llms_txt_present": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "llms_txt_reachable",
+                      "llms_txt_valid"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "geo.sameas_authority": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "sameas_count",
+                      "authoritative_domains"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "seo.canonical_url": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "canonical_href",
+                      "resolves_to_self"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "seo.https": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "final_url",
+                      "final_protocol"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "seo.meta_description": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "description_text",
+                      "description_length"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "seo.mobile_viewport": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "viewport_value"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "seo.robots_indexability": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "robots_txt_disallows",
+                      "meta_robots_directives",
+                      "x_robots_tag"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "seo.sitemap_present": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "sitemap_url",
+                      "sitemap_reachable",
+                      "sitemap_valid_xml"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              },
+              "seo.title_tag": {
+                "properties": {
+                  "evidence": {
+                    "required": [
+                      "title_text",
+                      "title_length"
+                    ]
+                  }
+                },
+                "required": [
+                  "verdict",
+                  "evidence"
+                ]
+              }
+            }
+          },
+          "scoring": {
+            "required": [
+              "pillar_scores",
+              "overall_score",
+              "overall_score_semantics"
+            ]
+          }
+        },
+        "required": [
+          "scoring",
+          "methodology"
+        ]
+      }
+    }
+  ],
+  "description": "Canonical JSON Schema for audit reports conformant to the AI Visibility Audit Standard v0.1. Maintained by Cloud WiFi Limited. Generated from STANDARD.md — do not edit by hand.",
+  "examples": [
+    {
+      "audited_url": "https://example.com",
+      "checks": {
+        "seo.https": {
+          "verdict": "pass"
+        }
+      },
+      "standard_version": "0.1",
+      "timestamp": "2026-04-23T10:30:00Z"
+    }
+  ],
+  "properties": {
+    "audited_url": {
+      "description": "The URL that was audited.",
+      "format": "uri",
+      "type": "string"
+    },
+    "checks": {
+      "additionalProperties": false,
+      "description": "Map of check IDs to verdict+evidence entries. Known check IDs (from the spec) are strictly typed. Non-standard check IDs MUST be namespaced outside the core pillars (e.g., 'ext.vendor.custom') and are preserved but excluded from scoring.",
+      "minProperties": 1,
+      "patternProperties": {
+        "^(?!(seo|aeo|geo)\\.)[a-z0-9_]+\\.[a-z0-9_.]+$": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "type": "object"
+            },
+            "verdict": {
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        }
+      },
+      "properties": {
+        "aeo.article_schema": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "required_properties_present": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "schema_found": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check aeo.article_schema. One of: pass, fail, not_checked.",
+              "enum": [
+                "pass",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "aeo.direct_answer_opening": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "contains_definition": {
+                  "type": "boolean"
+                },
+                "first_paragraph_text": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "word_count": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check aeo.direct_answer_opening. One of: pass, warning, fail, not_checked.",
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "aeo.faq_schema": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "question_count": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "schema_found": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check aeo.faq_schema. One of: pass, warning, fail, not_checked.",
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "aeo.heading_hierarchy": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "h1_count": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "heading_outline": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "skipped_levels": {
+                  "items": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "maxItems": 2,
+                    "minItems": 2,
+                    "type": "array"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check aeo.heading_hierarchy. One of: pass, warning, fail, not_checked.",
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "aeo.organization_schema": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "has_name": {
+                  "type": "boolean"
+                },
+                "has_url": {
+                  "type": "boolean"
+                },
+                "schema_found": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check aeo.organization_schema. One of: pass, fail, not_checked.",
+              "enum": [
+                "pass",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "geo.about_page_depth": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "about_page_url": {
+                  "format": "uri",
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "entity_markers": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "word_count": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check geo.about_page_depth. One of: pass, warning, fail, not_checked.",
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "geo.directory_presence": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "directory_sources_checked": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "listings_found": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "match_type": {
+                        "enum": [
+                          "exact",
+                          "fuzzy",
+                          "partial"
+                        ],
+                        "type": "string"
+                      },
+                      "record_url": {
+                        "format": "uri",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "source": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "match_type"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "sources_timestamp": {
+                  "additionalProperties": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check geo.directory_presence. One of: pass, warning, fail, not_checked.",
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "geo.entity_consistency": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "address_variants": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "source": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "value"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "canonical_entity_name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "name_variants": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "source": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "value"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check geo.entity_consistency. One of: pass, warning, fail, not_checked.",
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "geo.llms_txt_present": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "llms_txt_reachable": {
+                  "type": "boolean"
+                },
+                "llms_txt_valid": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check geo.llms_txt_present. One of: pass, fail, not_checked.",
+              "enum": [
+                "pass",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "geo.sameas_authority": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "authoritative_domains": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "sameas_count": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check geo.sameas_authority. One of: pass, warning, fail, not_checked.",
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "seo.canonical_url": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "canonical_href": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "resolves_to_self": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check seo.canonical_url. One of: pass, warning, fail, not_checked.",
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "seo.https": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "final_protocol": {
+                  "enum": [
+                    "http",
+                    "https"
+                  ],
+                  "type": "string"
+                },
+                "final_url": {
+                  "format": "uri",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check seo.https. One of: pass, fail, not_checked.",
+              "enum": [
+                "pass",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "seo.meta_description": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "description_length": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "description_text": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check seo.meta_description. One of: pass, warning, fail, not_checked.",
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "seo.mobile_viewport": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "viewport_value": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check seo.mobile_viewport. One of: pass, fail, not_checked.",
+              "enum": [
+                "pass",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "seo.robots_indexability": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "meta_robots_directives": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "robots_txt_disallows": {
+                  "type": "boolean"
+                },
+                "x_robots_tag": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check seo.robots_indexability. One of: pass, fail, not_checked.",
+              "enum": [
+                "pass",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "seo.sitemap_present": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "sitemap_reachable": {
+                  "type": "boolean"
+                },
+                "sitemap_url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "sitemap_valid_xml": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check seo.sitemap_present. One of: pass, fail, not_checked.",
+              "enum": [
+                "pass",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        },
+        "seo.title_tag": {
+          "additionalProperties": true,
+          "properties": {
+            "evidence": {
+              "additionalProperties": true,
+              "properties": {
+                "title_length": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "title_text": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "truncation_reason": {
+              "description": "Required when verdict is 'not_checked' due to truncation (spec §8.3).",
+              "type": "string"
+            },
+            "verdict": {
+              "description": "Verdict for check seo.title_tag. One of: pass, warning, fail, not_checked.",
+              "enum": [
+                "pass",
+                "warning",
+                "fail",
+                "not_checked"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "implementation": {
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "type": "object"
+    },
+    "level": {
+      "description": "The conformance level claimed by this audit.",
+      "enum": [
+        "minimal",
+        "standard",
+        "full"
+      ],
+      "type": "string"
+    },
+    "methodology": {
+      "additionalProperties": true,
+      "properties": {
+        "data_sources": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "queried_at": {
+                "format": "date-time",
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "queried_at"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "engine_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "engine_version",
+        "data_sources"
+      ],
+      "type": "object"
+    },
+    "scoring": {
+      "additionalProperties": false,
+      "properties": {
+        "overall_score": {
+          "maximum": 95,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "overall_score_semantics": {
+          "description": "Single-sentence plain-language statement of what the overall score measures and does not measure. Required at the 'full' conformance level (spec §7.2).",
+          "minLength": 1,
+          "type": "string"
+        },
+        "pillar_scores": {
+          "additionalProperties": false,
+          "properties": {
+            "aeo": {
+              "description": "Integer pillar score capped at 95, or null if pillar is excluded.",
+              "maximum": 95,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "geo": {
+              "description": "Integer pillar score capped at 95, or null if pillar is excluded.",
+              "maximum": 95,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "seo": {
+              "description": "Integer pillar score capped at 95, or null if pillar is excluded.",
+              "maximum": 95,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "seo",
+            "aeo",
+            "geo"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "pillar_scores",
+        "overall_score"
+      ],
+      "type": "object"
+    },
+    "standard_version": {
+      "const": "0.1",
+      "description": "The standard version this audit conforms to.",
+      "type": "string"
+    },
+    "timestamp": {
+      "description": "ISO 8601 timestamp of when the audit was produced.",
+      "format": "date-time",
+      "type": "string"
+    }
+  },
+  "required": [
+    "standard_version",
+    "audited_url",
+    "timestamp",
+    "checks"
+  ],
+  "title": "AI Visibility Audit Report",
+  "type": "object"
+}
