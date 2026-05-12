@@ -4,7 +4,6 @@ Open specifications for measuring and improving website visibility in traditiona
 
 [![Licence: CC-BY 4.0](https://img.shields.io/badge/Licence-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Validator: MIT](https://img.shields.io/badge/Validator-MIT-blue.svg)](./LICENSE-MIT.txt)
-[![npm: @makeitseo/standard](https://img.shields.io/npm/v/@makeitseo/standard.svg)](https://www.npmjs.com/package/@makeitseo/standard)
 
 ---
 
